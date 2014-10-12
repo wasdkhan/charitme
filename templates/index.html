@@ -1,6 +1,35 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% load bootstrap3 %}
+{% load staticfiles %}
+
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+
+<header class="intro-header" style="background-image: url({% static 'img/home-bg.jpg' %})">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="site-heading">
+          <h1 style="color:#1D558F;">Charit.me</h1>
+          <hr class="small"></hr>
+          <div class="btn-group">
+            <!-- <a href="#" class="btn btn-default">REGISTER</a> -->
+            <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">REGISTER<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <!-- <li><a href="#">About</a></li> -->
+              <li><a href="{% url "user" %}">User</a></li>
+              <li><a href="{% url "charity" %}">Charity</a></li>
+              <li><a href="{% url "company" %}">Funding Campaign</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
 
 <h2 class="sub-header">Charities</h2>
   <div class="table-responsive">
@@ -27,28 +56,27 @@
       	{% endfor %}
       {% endif %}
     </table>
-  </div>
 
 <!-- {% if charity_list %}
-    <ul>
-    {% for charity in charity_list %}
-        <li>{{ charity.upvotes }} {{ charity.name }}</li>
+<ul>
+{% for charity in charity_list %}
+<li>{{ charity.upvotes }} {{ charity.name }}</li>
 
-    {% endfor %}
-    </ul>
+{% endfor %}
+</ul>
 {% else %}
-    <p>No charities are available.</p>
+<p>No charities are available.</p>
 {% endif %}
 
 {% if charity_list %}
-    <ul>
-    {% for charity in charity_list %}
-        <li>{{ charity.upvotes }} {{ charity.name }}</li>
+<ul>
+{% for charity in charity_list %}
+<li>{{ charity.upvotes }} {{ charity.name }}</li>
 
-    {% endfor %}
-    </ul>
+{% endfor %}
+</ul>
 {% else %}
-    <p>No charities are available.</p>
+<p>No charities are available.</p>
 {% endif %}
 </table> -->
 
