@@ -42,8 +42,8 @@ def user(request):
 	return render(request, template, context)
 
 def index(request):
-    charity_list = Charity.objects.order_by('-upvotes')[:5]
-    output = ', '.join([p.name for p in charity_list])
+    charity_list = Charity.objects.order_by('-upvotes')
+    # output = ', '.join([p.name for p in charity_list])
     # return HttpResponse(output)
     context = {'charity_list': charity_list}
     return render(request, 'index.html', context)
