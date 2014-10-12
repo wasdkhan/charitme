@@ -1,5 +1,4 @@
 from django.shortcuts import render, HttpResponse, HttpResponseRedirect, Http404, get_object_or_404
-from embed_video.backends import detect_backend
 
 from .forms import CompanyForm, CharityForm, UserForm, UpvoteForm
 from .models import Company, Charity, User, Upvote
