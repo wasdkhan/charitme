@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse, HttpResponseRedirect, Http404
 
-from .forms import CompanyForm, CharityForm, UserForm	
+from .forms import CompanyForm, CharityForm, UserForm
 from .models import Company, Charity, User
 
 def company(request):
@@ -11,8 +11,10 @@ def company(request):
 		# new_join, created = Company.objects.get_or_create(name=name)
 		new_join.save()
 
-	context = {'form': form}
 	template = 'company.html'
+	charity_list = Charity.objects.all()
+	# return HttpResponse(output)
+	context = {'charity_list': charity_list, 'form': form}
 	return render(request, template, context)
 
 def charity(request):
