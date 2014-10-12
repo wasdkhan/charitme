@@ -5,10 +5,10 @@
 <h1>Company Page</h1>
 
 <form method="POST" action=""> {% csrf_token %}
-    <div class="col-lg-10">
+    <div style="padding:15px">
       company name: {{ form.name }}
     </div>
-    <div class="col-lg-10">
+    <div style="padding:15px">
       {% if charity_list %}
       <select name="charity" id={{form.charity}} style="padding:5px;">
         {% for charity in charity_list %}
@@ -22,7 +22,7 @@
       </select>
       {% endif %}
     </div>
-    <div class="col-lg-10">
+    <div style="padding:15px">
       <input type='submit' value='Join' class='btn btn-primary'>
     </div>
 </form>
