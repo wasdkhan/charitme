@@ -17,10 +17,10 @@
       <tbody>
         <tr>
         {% for charity in charity_list %}
-          <td>{{ forloop.counter }}</td>
-          <td>{{ charity.upvotes }}</td>
-          <td>{{ charity.name }} </td>
-          <td>{{ charity.description }}</td>
+          <td><h4>{{ forloop.counter }}</h4></td>
+          <td><h6>{{ charity.upvotes }}</h6></td>
+          <td><h3>{{ charity.name }}</h3></td>
+          <td><h9>{{ charity.description }}</h9></td>
         </tr>
       </tbody>
         {% endfor %}
