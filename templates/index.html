@@ -1,7 +1,44 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<table>
+
+<h2 class="sub-header">Charities</h2>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>upvotes</th>
+          <th>name</th>
+          <th>description</th>
+        </tr>
+      </thead>
+      {% if charity_list %}
+      <tbody>
+        <tr>
+        {% for charity in charity_list %}
+          <td>{{ charity.id }}</td>
+          <td>{{ charity.upvotes }}</td>
+          <td>{{ charity.name }}</td>
+          <td>{{ charity.description }}</td>
+        </tr>
+      </tbody>
+      	{% endfor %}
+      {% endif %}
+    </table>
+  </div>
+
+<!-- {% if charity_list %}
+    <ul>
+    {% for charity in charity_list %}
+        <li>{{ charity.upvotes }} {{ charity.name }}</li>
+
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No charities are available.</p>
+{% endif %}
+
 {% if charity_list %}
     <ul>
     {% for charity in charity_list %}
@@ -12,6 +49,6 @@
 {% else %}
     <p>No charities are available.</p>
 {% endif %}
-</table>
+</table> -->
 
 {% endblock %}
