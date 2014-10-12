@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+{% load bootstrap3 %}
 <h2 class="sub-header">Charities</h2>
   <div class="table-responsive">
     <table class="table table-hover">
@@ -17,13 +17,13 @@
       <tbody>
         <tr>
         {% for charity in charity_list %}
-          <td>{{ charity.id }}</td>
+          <td>{{ forloop.counter }}</td>
           <td>{{ charity.upvotes }}</td>
-          <td>{{ charity.name }}</td>
+          <td>{{ charity.name }} </td>
           <td>{{ charity.description }}</td>
         </tr>
       </tbody>
-      	{% endfor %}
+        {% endfor %}
       {% endif %}
     </table>
   </div>
