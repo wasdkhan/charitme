@@ -8,8 +8,4 @@ def example(request):
 	context = {}
 	return render(request, 'example.html', context)
 
-def charity(request):
-	context = {}
-	return render(request, 'charity.html', context)
-
 
