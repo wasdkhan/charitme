@@ -1,7 +1,7 @@
-from django.shortcuts import render, HttpResponseRedirect, Http404
+from django.shortcuts import render, HttpResponse, HttpResponseRedirect, Http404
 
 from .forms import CompanyForm, CharityForm, UserForm	
-from .models import Company
+from .models import Company, Charity, User
 
 def company(request):
 	form = CompanyForm(request.POST or None)
@@ -38,3 +38,10 @@ def user(request):
 	context = {'form': form}
 	template = 'user.html'
 	return render(request, template, context)
+
+def index(request):
+    charity_list = Charity.objects.order_by('-upvotes')[:5]
+    output = ', '.join([p.name for p in charity_list])
+    # return HttpResponse(output)
+    context = {'charity_list': charity_list}
+    return render(request, 'index.html', context)

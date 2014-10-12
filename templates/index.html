@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if charity_list %}
+    <ul>
+    {% for charity in charity_list %}
+        <li>{{ charity.name }}</li>
+        <li>{{ charity.upvotes }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No charities are available.</p>
+{% endif %}
+
+{% endblock %}
