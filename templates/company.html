@@ -4,37 +4,41 @@
 
 <h1>Company Page</h1>
 
-<form method="POST" action=""> {% csrf_token %}
+<!-- <form method="POST" action=""> {% csrf_token %}
   <div style="padding:15px">
     company name: {{ form.name }}
   </div>
   <div style="padding:15px">
     Charity to Support:
     {% if charity_list %}
-    <select name="charity" id={{form.charity}}>
-      {% for charity in charity_list %}
-      <!-- <option value="all">ALL</option> -->
-      <option value="{{charity}}">{{charity}}</option>
-      {% endfor %}
-    </select>
-    {% else %}
-    <select name="charity">
-      <option value="">no charities found</option>
-    </select>
+      <select name="charity" id={{form.charity}}>
+        {% for charity in charity_list %}
+        <option value="{{charity}}">{{charity}}</option>
+        {% endfor %}
+      </select>
+      {% else %}
+      <select name="charity">
+        <option value="">no charities found</option>
+      </select>
     {% endif %}
   </div>
   <div style="padding:15px">
     Dollars per Upvote:
-    <select name="upvote_val" id={{form.upvote_val}}>
-      <option value=1>$1</option>
-      <option value=2>$2</option>
-      <option value=3>$3</option>
-      <option value=4>$4</option>
-    </select>
-    </div>
-    <div style="padding:15px">
-      <input type='submit' value='Join' class='btn btn-primary'>
-    </div>
-  </form>
+      <select name="upvote_val" id="{{form.upvote_val}}">
+        <option value=1>$1</option>
+        <option value=2>$2</option>
+        <option value=3>$3</option>
+        <option value=4>$4</option>
+      </select>
+  </div>
+  <div style="padding:15px">
+    <input type='submit' value='Join' class='btn btn-primary'>
+  </div>
+</form> -->
 
-  {% endblock %}
+<form method="POST" action="" role="form"> {% csrf_token %}
+{{ form.as_p }}
+<input type='submit' value='Post' class='btn btn-primary'>
+</form>
+
+{% endblock %}

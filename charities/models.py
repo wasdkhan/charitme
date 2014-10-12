@@ -10,9 +10,9 @@ class Charity(models.Model):
 		return self.name
 
 class Company(models.Model):
-	name = models.CharField(max_length=200)
-	charity_id = models.IntegerField()
-	upvote_val = models.FloatField()
+	name = models.CharField("Company Title", max_length=200)
+	charity = models.ForeignKey(Charity)
+	upvote_val = models.FloatField("Value per upvote")
 	start_time = models.DateTimeField(auto_now=False, auto_now_add=False)
 	end_time = models.DateTimeField(auto_now=False, auto_now_add=False)
 

@@ -9,7 +9,7 @@ class CharityAdmin(admin.ModelAdmin):
 		model = Charity
 
 class CompanyAdmin(admin.ModelAdmin):
-	list_display = ['__unicode__','charity_id','upvote_val']
+	list_display = ['__unicode__','charity','upvote_val']
 	class Meta: 
 		model = Company
 
