@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<link href="{% static "css/cover.css" %}" rel="stylesheet">
+
+<div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="inner cover">
+          	<img src = "{{ upvote.charity.image_url }}" class="img-rounded" />
+            <h1 class="cover-heading">{{ upvote.charity.name }}</h1>
+            <p class="lead">{{ upvote.charity.description }}</p>
+            <p class="lead">
+              <a href="#" class="btn btn-lg btn-default">Learn more</a>
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+<!-- <h3>{{ upvote.charity.name }}</h3>
+<h5>{{ upvote.upvotes }}</h5>
+<img src = "{{ upvote.charity.image_url }}" class="img-rounded" />
+<form action="" method="POST"> {% csrf_token %}
+    <input type="checkbox" name="choice" value="Upvote {{ upvote.charity.name }}" />
+    <input type="submit" value="Upvote" />
+</form> -->
+{% endblock %}

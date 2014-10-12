@@ -13,14 +13,15 @@
           <th>description</th>
         </tr>
       </thead>
-      {% if charity_list %}
+      {% if upvotes_list %}
       <tbody>
+        
         <tr>
-        {% for charity in charity_list %}
-          <td>{{ charity.id }}</td>
-          <td>{{ charity.upvotes }}</td>
-          <td>{{ charity.name }}</td>
-          <td>{{ charity.description }}</td>
+        {% for upvote in upvotes_list %}
+          <td>{{ forloop.counter }}</td>
+          <td>{{ upvote.upvotes }}</td>
+          <td>{{ upvote.charity.name }}</td>
+          <td><a href = "/charity/{{upvote.charity.id}}"> Click Me {{ upvote.charity.description }}</td></a>
         </tr>
       </tbody>
       	{% endfor %}

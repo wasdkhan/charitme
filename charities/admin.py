@@ -1,10 +1,10 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Charity, Company, User
+from .models import Charity, Company, User, Upvote
 
 class CharityAdmin(admin.ModelAdmin):
-	list_display = ['__unicode__','upvotes', 'description']
+	list_display = ['__unicode__','image_url', 'description']
 	class Meta: 
 		model = Charity
 
@@ -18,6 +18,12 @@ class UserAdmin(admin.ModelAdmin):
 	class Meta: 
 		model = User
 
+class UpvoteAdmin(admin.ModelAdmin):
+	list_display = ['__unicode__','upvotes']
+	class Meta:
+		model = Upvote
+
 admin.site.register(Charity, CharityAdmin)
 admin.site.register(Company, CompanyAdmin)
 admin.site.register(User, UserAdmin)
+admin.site.register(Upvote, UpvoteAdmin)

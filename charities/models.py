@@ -2,12 +2,25 @@ from django.db import models
 
 class Charity(models.Model):
 	name = models.CharField(max_length=200)
-	youtube_url = models.URLField(max_length=200)
-	upvotes = models.IntegerField()
+	image_url = models.URLField(max_length=200)
 	description = models.CharField(max_length=500)
 
 	def __unicode__(self):
 		return self.name
+
+class Upvote(models.Model):
+	charity = models.ForeignKey(Charity)
+	upvotes = models.IntegerField()
+
+	def __unicode__(self):
+		return self.charity.name
+
+class Vote(models.Model):
+	voter = models.ForeignKey('User')
+	link = models.ForeignKey(Charity)
+
+	def __unicode__(self):
+		return "%s voted %s" % (self.voter.name, self.link.name)
 
 class Company(models.Model):
 	name = models.CharField("Company Title", max_length=200)
