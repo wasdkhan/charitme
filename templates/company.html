@@ -5,21 +5,26 @@
 <h1>Company Page</h1>
 
 <form method="POST" action=""> {% csrf_token %}
-  <row>
-{{ form.name }}
-{% if charity_list %}
-<select name="charity">
-  {% for charity in charity_list %}
-  <!-- <option value="all">ALL</option> -->
-  <option value="{{charity}}">{{charity}}</option>
-  {% endfor %}
-</select>
-{% else %}
-<select name="charity">
-  <option value="">no charities found</option>
-</select>
-{% endif %}
-<input type='submit' value='Join' class='btn btn-primary'>
+    <div>
+      company name: {{ form.name }}
+    </div>
+    <div>
+      {% if charity_list %}
+      <select name="charity">
+        {% for charity in charity_list %}
+        <!-- <option value="all">ALL</option> -->
+        <option value="{{charity}}">{{charity}}</option>
+        {% endfor %}
+      </select>
+      {% else %}
+      <select name="charity">
+        <option value="">no charities found</option>
+      </select>
+      {% endif %}
+    </div>
+    <div>
+      <input type='submit' value='Join' class='btn btn-primary'>
+    </div>
 </form>
 
 {% endblock %}
