@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load bootstrap3 %}
+{% load staticfiles %}
+
+<<<<<<< HEAD
+<h2 class="sub-header">Charities</h2>
+  <div class="table-responsive">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>upvotes</th>
+          <th>name</th>
+          <th>description</th>
+        </tr>
+      </thead>
+      {% if upvotes_list %}
+      <tbody>
+        
+        <tr>
+        {% for upvote in upvotes_list %}
+          <td>{{ forloop.counter }}</td>
+          <td>{{ upvote.upvotes }}</td>
+          <td>{{ upvote.charity.name }}</td>
+          <td><a href = "/charity/{{upvote.charity.id}}"> Click Me {{ upvote.charity.description }}</td></a>
+        </tr>
+      </tbody>
+      	{% endfor %}
+      {% endif %}
+    </table>
+=======
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+
+<header class="intro-header" style="background-image: url({% static 'img/home-bg.jpg' %})">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="site-heading">
+          <h1 style="color:#1D558F;">Charit.me</h1>
+          <hr class="small"></hr>
+          <div class="btn-group">
+            <!-- <a href="#" class="btn btn-default">REGISTER</a> -->
+            <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">REGISTER<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <!-- <li><a href="#">About</a></li> -->
+              <li><a href="{% url "user" %}">User</a></li>
+              <li><a href="{% url "charity" %}">Charity</a></li>
+              <li><a href="{% url "company" %}">Funding Campaign</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+>>>>>>> ef8c9b364bee2cc582c79aa9411fc7d7989213f5
+  </div>
+</header>
+
+
+<h4 class="sub-header">Charities</h4>
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>upvotes</th>
+        <th>name</th>
+        <th>description</th>
+      </tr>
+    </thead>
+    {% if charity_list %}
+    <tbody>
+      <tr>
+        {% for charity in charity_list %}
+        <td><h4>{{ forloop.counter }}</h4></td>
+        <td><h6>{{ charity.upvotes }}</h6></td>
+        <td><h3>{{ charity.name }}</h3></td>
+        <td><h9>{{ charity.description }}</h9></td>
+      </tr>
+    </tbody>
+    {% endfor %}
+    {% endif %}
+  </table>
+</div>
+
+<!-- {% if charity_list %}
+<ul>
+{% for charity in charity_list %}
+<li>{{ charity.upvotes }} {{ charity.name }}</li>
+
+{% endfor %}
+</ul>
+{% else %}
+<p>No charities are available.</p>
+{% endif %}
+
+{% if charity_list %}
+<ul>
+{% for charity in charity_list %}
+<li>{{ charity.upvotes }} {{ charity.name }}</li>
+
+{% endfor %}
+</ul>
+{% else %}
+<p>No charities are available.</p>
+{% endif %}
+</table> -->
+
+{% endblock %}

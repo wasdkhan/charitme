@@ -14,8 +14,11 @@
           	<img src = "{{ upvote.charity.image_url }}" class="img-rounded" />
             <h1 class="cover-heading">{{ upvote.charity.name }}</h1>
             <p class="lead">{{ upvote.charity.description }}</p>
-            <p class="lead">
-              <a href="#" class="btn btn-lg btn-default">Learn more</a>
+            <p class="lead">{{ upvote.upvotes }}</p>
+              <form action="" method="POST"> {% csrf_token %}
+			    <input type="checkbox" name="choice" value="Upvote {{ upvote.charity.name }}" />
+			    <input type="submit" value="Upvote" />
+			</form>
             </p>
           </div>
 
