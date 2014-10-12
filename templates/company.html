@@ -5,12 +5,12 @@
 <h1>Company Page</h1>
 
 <form method="POST" action=""> {% csrf_token %}
-    <div>
+    <div class="col-lg-10">
       company name: {{ form.name }}
     </div>
-    <div>
+    <div class="col-lg-10">
       {% if charity_list %}
-      <select name="charity">
+      <select name="charity" id={{form.charity}} style="padding:5px;">
         {% for charity in charity_list %}
         <!-- <option value="all">ALL</option> -->
         <option value="{{charity}}">{{charity}}</option>
@@ -22,7 +22,7 @@
       </select>
       {% endif %}
     </div>
-    <div>
+    <div class="col-lg-10">
       <input type='submit' value='Join' class='btn btn-primary'>
     </div>
 </form>
