@@ -130,7 +130,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     'charities',
-    'floppyforms'
+    'bootstrap3'
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
