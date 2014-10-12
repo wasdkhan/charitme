@@ -4,7 +4,7 @@ from .forms import CompanyForm, CharityForm, UserForm
 from .models import Company, Charity, User
 
 def company(request):
-	form = CompanyForm({'name':'Company Title'}, request.POST or None)
+	form = CompanyForm(request.POST or None)
 	if form.is_valid():
 		new_join = form.save(commit=False)
 		# name = form.cleaned_data['name']
