@@ -49,8 +49,8 @@
         {% for upvote in upvotes_list %}
           <td>{{ forloop.counter }}</td>
           <td>{{ upvote.upvotes }}</td>
-          <td>{{ upvote.charity.name }}</td>
-          <td><a href = "/charity/{{upvote.charity.id}}"> Click Me {{ upvote.charity.description }}</td></a>
+          <td><a href = "/charity/{{upvote.charity.id}}">{{ upvote.charity.name }}</td></a>
+          <td>{{ upvote.charity.description }}</td>
         </tr>
       </tbody>
       	{% endfor %}
