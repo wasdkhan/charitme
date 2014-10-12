@@ -11,3 +11,5 @@ def example(request):
 def charity(request):
 	context = {}
 	return render(request, 'charity.html', context)
+
+
