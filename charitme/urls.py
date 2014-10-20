@@ -10,8 +10,8 @@ urlpatterns = patterns('',
 	# REFER TO THIS AS AN EXAMPLE
 	url(r'^example$', 'charitme.views.example', name='example'), 
     
-    url(r'^$', 'charitme.views.home', name='home'),
-    url(r'', include('charities.urls')),
+    # url(r'^$', 'charitme.views.home', name='home'),
+    url(r'^', include('charities.urls')),
     # url(r'^charity$', 'charitme.views.charity', name='charity'),        
     # url(r'^company$', 'charity.views.company', name='company'),
     # url(r'^charitme/', include('charitme.foo.urls')),
