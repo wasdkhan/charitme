@@ -34,6 +34,7 @@ class Company(models.Model):
 
 class User(models.Model):
 	name = models.CharField(max_length=100)
+	password = models.CharField(max_length=50)
 
 	def __unicode__(self):
 		return self.name

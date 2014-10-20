@@ -1,5 +1,0 @@
-argparse
-coverage
-flake8
-django-discover-runner
-Pillow
