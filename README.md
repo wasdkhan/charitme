@@ -9,5 +9,3 @@ get-pip.py from: https://bootstrap.pypa.io/get-pip.py
 3. Navigate to the directory of the project and run: "pip install -r requirements.txt"
 4. In terminal, run "python manage.py runserver"
 5. In browser, navigate to "localhost:8000"
-
-This project is currently under works..
