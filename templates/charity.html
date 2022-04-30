@@ -1,7 +1,29 @@
 {% extends 'base.html' %}
+{% load bootstrap3 %}
 
 {% block content %}
 
-<h1>Charity Register Page</h1>
+<h3>Register a Charity</h3>
+
+<!-- <form method="POST" action="" role="form"> {% csrf_token %}
+  <div class="form-group">
+    <label for="id_name">Name:</label>
+    {{ form.name }}
+  </div>
+  <div class="form-group">
+    <label for="id_youtube_url">YouTube URL:</label>
+    {{ form.youtube_url }}
+  </div>
+  <div class="form-group">
+    <label for="id_description">Description:</label>
+    {{ form.description }}
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form> -->
+
+<form method="POST" action=""> {% csrf_token %}
+{% bootstrap_form form %}
+<input type='submit' value='Post' class='btn btn-primary'>
+</form>
 
 {% endblock %}

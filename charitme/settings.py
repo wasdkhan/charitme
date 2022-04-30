@@ -1,5 +1,5 @@
 # Django settings for charitme project.
-import os
+import os, os.path
 PROJECT_ROOT = os.path.dirname(os.path.dirname(__file__))
 
 DEBUG = True
@@ -25,13 +25,13 @@ DATABASES = {
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["www.charit.me"]
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'America/New_York'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -74,6 +74,10 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(
+        os.path.dirname(__file__),
+        'static',
+    ),
 )
 
 # List of finder classes that know how to find static files in
@@ -125,6 +129,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
+    'charities',
+    'bootstrap3',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
